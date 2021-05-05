@@ -1,0 +1,68 @@
+{
+    "name": "ced102",
+    "version": "1.0.0",
+    "description": "**2021/3/10** **@@include('./layout/header.html');** **@@include('./layout/footer.html');** <!--Bootstrap5 JavaScript Bundle with Popper --> <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0\" crossorigin=\"anonymous\"></script> <!--Bootstrap5 CSS only --> <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">",
+    "main": "index.js",
+    "script comment": {
+        "dev": "安裝套件有更新套件時",
+        "renew": "更新dist每次pull下來時",
+        "watch": "執行監聽開始開發時",
+        "browser": "同步檢視更新"
+    },
+    "scripts": {
+        "dev": "npm install",
+        "renew": "gulp u",
+        "watch": "gulp w",
+        "browser": "gulp browser"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sexfat/ced102.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sexfat/ced102/issues"
+    },
+    "homepage": "https://github.com/sexfat/ced102#readme",
+    "devDependencies": {
+        "bootstrap": "^4.6.0",
+        "browser-sync": "^2.26.14",
+        "css-loader": "^5.2.0",
+        "file-loader": "^6.2.0",
+        "gulp": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-file-include": "^2.3.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "jquery": "^3.6.0",
+        "node-sass": "^5.0.0",
+        "vue-loader": "^15.9.6",
+        "vue-style-loader": "^4.1.3",
+        "vue-template-compiler": "^2.6.12",
+        "webpack": "^4.46.0",
+        "webpack-cli": "^4.6.0"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bootstrap": "^4.6.0",
+        "bootstrap-icons": "^1.4.0",
+        "bootstrap-vue": "^2.21.2",
+        "express": "^4.17.1",
+        "three": "^0.127.0",
+        "vue": "^2.6.12",
+        "vue-cli": "^2.9.6",
+        "vuex": "^3.6.2"
+    },
+    "babel": {
+        "presets": [
+            "env",
+            "vue"
+        ]
+    },
+    "keywords": []
+}
