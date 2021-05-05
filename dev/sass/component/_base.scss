@@ -1,0 +1,12 @@
+body{
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'taipeisans', 'Roboto', sans-serif;
+}
+
+@font-face {
+    font-family: taipeisans;
+    src: url(../fonts/TaiPeiSansTCBeta-Light.ttf),
+        url(../fonts/TaiPeiSansTCBeta-Regular.ttf),
+        url(../fonts/fonts/TaiPeiSansTCBeta-Bold.ttf);
+}

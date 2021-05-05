@@ -1,0 +1,37 @@
+footer{
+    background-color: #323237;
+    font-size: 15px;
+    .all{
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    li{
+        color: #fff;
+        margin-top: 16px;
+        a{
+            color: #fff;
+        }
+    }
+}
+.community{
+    .logo{
+        background-image: url('../images/component/logo.png');
+        background-position: top center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 220px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer{
+        .community,.aboutMCY{
+            display: none;
+        }
+    }
+}
