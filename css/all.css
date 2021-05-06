@@ -61,7 +61,7 @@ a {
 body {
   overflow-x: hidden;
   position: relative;
-  font-family: 'taipeisans', 'Roboto', sans-serif;
+  font-family: 'Roboto','taipeisans','sans-serif';
 }
 
 @font-face {
@@ -79,13 +79,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   min-height: 8vh;
   font-family: 'Roboto', sans-serif;
 }
 
 nav .nav-links {
-  width: 30%;
+  width: 20%;
   position: absolute;
   top: 8vh;
   right: 0;
@@ -94,7 +94,7 @@ nav .nav-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   transform: translateX(100%);
   transition: transform .5s ease-in;
 }
@@ -134,11 +134,13 @@ nav .nav-active {
   background-position: center right 10px;
   background-size: 15px;
   background-repeat: no-repeat;
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
   background-color: #f8f8f8;
-  padding: 5px 10px;
-  width: 80%;
+  padding: 15px 10px;
+  max-width: 500px;
+  width: 500px;
+  font-size: 15px;
 }
 
 .burgerMenu {
@@ -146,6 +148,10 @@ nav .nav-active {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.burgerMenu .burger {
+  margin-left: 8px;
 }
 
 .burgerMenu .burger div {
@@ -179,15 +185,30 @@ nav .nav-active {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
+  .search input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
   nav {
-    margin: 0;
+    margin: 0 30px;
   }
   nav .nav-links {
     width: 100%;
   }
   .burgerMenu span {
     display: none;
+  }
+  .search input {
+    display: none;
+  }
+  .phoneSearch {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../images/component/magnify.png");
+    margin-right: 16px;
   }
 }
 

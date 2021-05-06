@@ -80,7 +80,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML));
+exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML,moveFonts));
 
 exports.browser = function browsersync() {
     browserSync.init({
