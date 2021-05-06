@@ -9,6 +9,11 @@ const clean = require('gulp-clean');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload; //browser的方法 更新後~
 
+function moveFonts() {
+    return src("dev/fonts/*").pipe(dest("dist/fonts"));
+}
+exports.f = moveFonts;
+
 function movePhp() {
     return src("dev/php/**").pipe(dest("dist/php"));
 }
