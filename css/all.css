@@ -1,0 +1,231 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'taipeisans', 'Roboto', sans-serif;
+}
+
+@font-face {
+  font-family: taipeisans;
+  src: url(../../fonts/TaiPeiSansTCBeta-Light.ttf), url(../../fonts/TaiPeiSansTCBeta-Regular.ttf), url(../../fonts/fonts/TaiPeiSansTCBeta-Bold.ttf);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+nav {
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  min-height: 8vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+nav .nav-links {
+  width: 30%;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  height: 92vh;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transform: translateX(100%);
+  transition: transform .5s ease-in;
+}
+
+nav .nav-links li {
+  opacity: 0;
+}
+
+nav .nav-links a {
+  color: #fff;
+}
+
+nav .nav-active {
+  transform: translateX(0%);
+}
+
+.logo .brand {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-image: url("../../images/component/logo.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search input {
+  background-image: url("../../images/component/magnify.png");
+  background-position: center right 10px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+  background-color: #f8f8f8;
+  padding: 5px 10px;
+  width: 80%;
+}
+
+.burgerMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.burgerMenu .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 5px;
+  transition: all .3s ease;
+}
+
+.burgerMenu .toggle .line1 {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burgerMenu .toggle .line2 {
+  opacity: 0;
+}
+
+.burgerMenu .toggle .line3 {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    margin: 0;
+  }
+  nav .nav-links {
+    width: 100%;
+  }
+  .burgerMenu span {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #323237;
+  font-size: 15px;
+}
+
+footer .all {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer li {
+  color: #fff;
+  margin-top: 16px;
+}
+
+footer li a {
+  color: #fff;
+}
+
+.community .logo {
+  background-image: url("../../images/component/logo1.png");
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 180px;
+  height: 55px;
+}
+
+@media screen and (max-width: 768px) {
+  footer .community, footer .aboutMCY {
+    display: none;
+  }
+}
+/*# sourceMappingURL=all.css.map */

@@ -40,12 +40,12 @@ nav{
         text-indent: 101%;
         overflow: hidden;
         white-space: nowrap;
-        background-image: url('../images/component/logo.png');
+        background-image: url('../../images/component/logo.png');
         background-position: center center;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 128px;
-        height: 34px;
+        width: 200px;
+        height: 30px;
     }
 }
 
@@ -57,7 +57,7 @@ nav{
 
 .search{
     input{
-        background-image: url("../images/component/magnify.png");
+        background-image: url("../../images/component/magnify.png");
         background-position: center right 10px;
         background-size: 15px;
         background-repeat: no-repeat;

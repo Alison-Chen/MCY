@@ -98,7 +98,7 @@ exports.browser = function browsersync() {
     watch(['./dev/sass/**/*.scss', '!dev/sass/pages/*.scss'], commonStyle).on('change', reload);
     watch('./dev/sass/pages/*.scss', pageStyle).on('change', reload);
     watch('./dev/**/*.html', includeHTML).on('change', reload);
-    watch('./dev/img/*', moveImg).on('change', reload);
+    watch('./dev/img/**', moveImg).on('change', reload);
     watch('./dev/js/*.js', moveJS).on('change', reload);
 };
 
@@ -106,7 +106,7 @@ exports.w = function watchFiles() {
     watch(['./dev/sass/*.scss', '!dev/sass/pages/*.scss'], commonStyle);
     watch('./dev/sass/pages/*.scss', pageStyle);
     watch('./dev/**/*.html', includeHTML);
-    watch('./dev/img/*', moveImg);
+    watch('./dev/img/**', moveImg);
     watch('./dev/js/*.js', moveJS);
 };
 
