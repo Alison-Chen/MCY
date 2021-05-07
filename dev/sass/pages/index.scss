@@ -1,1 +1,4 @@
 @import "../all.scss";
+.btn{
+    @include btn($cyan);
+}
