@@ -90,7 +90,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index: 'scooter.html', //需更改成自己頁面的名稱
+            index: 'index.html', //需更改成自己頁面的名稱
             injectChanges: false,
         },
     });
@@ -98,16 +98,18 @@ exports.browser = function browsersync() {
     watch(['./dev/sass/**/*.scss', '!dev/sass/pages/*.scss'], commonStyle).on('change', reload);
     watch('./dev/sass/pages/*.scss', pageStyle).on('change', reload);
     watch('./dev/**/*.html', includeHTML).on('change', reload);
-    watch('./dev/img/**', moveImg).on('change', reload);
+    watch('./dev/images/**', moveImg).on('change', reload);
     watch('./dev/js/*.js', moveJS).on('change', reload);
+    watch('./dev/fonts/*', moveFonts).on('change',reload);
 };
 
 exports.w = function watchFiles() {
     watch(['./dev/sass/*.scss', '!dev/sass/pages/*.scss'], commonStyle);
     watch('./dev/sass/pages/*.scss', pageStyle);
     watch('./dev/**/*.html', includeHTML);
-    watch('./dev/img/**', moveImg);
+    watch('./dev/images/**', moveImg);
     watch('./dev/js/*.js', moveJS);
+    watch('./dev/fonts/*', moveFonts);
 };
 
 

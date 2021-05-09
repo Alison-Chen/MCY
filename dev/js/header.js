@@ -4,14 +4,17 @@ const navSlide = () => {
     const navLinks = document.querySelectorAll(".nav-links li");
     const burger = document.querySelector(".burger");
     const menu = document.querySelector(".burgerMenu span");
+    const n = document.querySelector("nav");
 
     burgerMenu.addEventListener("click", () => {
         nav.classList.toggle("nav-active");
         burger.classList.toggle("toggle");
         if(burger.className.includes("toggle")){
             menu.textContent = "CLOSE";
+            // n.style.backgroundColor = "#fff";
         }else{
             menu.textContent = "MENU";
+            // n.style.backgroundColor = "inherit";
         }
     })
 
