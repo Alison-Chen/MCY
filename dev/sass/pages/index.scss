@@ -1,1 +1,292 @@
 @import "../all.scss";
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+    @include respond(middle){
+        height: 1000px;
+        max-height: 100%;
+    }
+    @include respond(mobile){
+        height: 700px;
+        max-height: 100%;
+    }
+    .left,.right{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+    }
+    .left{
+        background-color: #fff;
+    }
+    .right{
+        background-color: #022889;
+        left: 50%;
+    }
+    .categories{
+        z-index: 1;
+        position: absolute;
+        left: 50px;
+        top: 450px;
+        left: 5%;
+        transform : translateY(-50%);
+        @include respond(middle){
+            top: 50%;
+        }
+        @include respond(pad){
+            display: none;
+        }
+        // width: 300px;
+        // max-width: 100%;
+        // border: 1px solid $d-grey;
+        li{
+            cursor: pointer;
+            padding: 20px;
+            // border: 1px solid $d-grey;
+        }
+    }
+    .slogan{
+        position: absolute;
+        right: 15%;
+        top: 700px;
+        text-align: center;
+        color: #fff;
+        @include respond(large){
+            right: 5%;
+        }
+        @include respond(middle){
+            top: 80%;
+        }
+        @include respond(mobile){
+            right: 2%;
+        }
+        h6{
+            font-size: 20px;
+            @include respond(mobile){
+                font-size: 14px;
+            }
+        }
+        .btn{
+            margin-top: 30px;
+            @include btn(white);
+            color: #000;
+            @include respond(mobile){
+                margin-top: 16px;
+            }
+        }
+    }
+    .product-img{
+        max-width: 50%;
+        position: absolute;
+        top: 5%;
+        left: 48%;
+        transform: translate(-50%,-50%);
+        animation: fly 4s ease-in-out infinite;
+        z-index: 1;
+        @include respond(middle){
+            top: 20%;
+        }
+        @include respond(mobile){
+            top: 30%;
+        }
+    }
+    .product-text{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-family: 'agnecyFB';
+        // border: 1px solid #000;
+        .product-title{
+            @include respond(max){
+                font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
+            }
+            @include respond(large){
+                font-size: calc(1.2rem + (250 - 1) * ((100vw - 900px) / (1200 - 350)));
+            }
+            @include respond(middle){
+                font-size: calc(1.2rem + (300 - 1) * ((100vw - 800px) / (1200 - 350)));
+                letter-spacing: 70px;
+                top: 200px;
+            }
+            @include respond(pad){
+                font-size: 80px;
+                // top: 175px;
+                // padding-right: 300px;
+                letter-spacing: 50px;
+            }
+            @include respond(mobile){
+                font-size: calc(1.2rem + (200 - 1) * ((100vw - 300px) / (1200 - 350)));
+                letter-spacing: 30px;
+                top: 150px;
+            }
+            // border: 1px solid #000;
+            top: 50px;
+            letter-spacing: 100px;
+            width: 100vw;
+            max-width: 100%;
+            position: relative;
+            // top: 400px;
+            .type{
+                color: #000;
+                position: absolute;
+                left: 20%;
+                @include respond(mobile){
+                    left: 15%;
+                }
+            }
+            .model{
+                color: #fff;
+                position: absolute;
+                left: 55%;
+            }
+        }
+    }
+}
+
+.battery{
+    color: #fff;
+    position: relative;
+    // width: 0;
+    p{
+        width: 43%;
+        line-height: 30px;
+        position: sticky;
+        mix-blend-mode: difference;
+        top: 50px;
+        left: 50%;
+        z-index: 3;
+        text-align: center;
+        display: inline-block;
+        padding-top: 200px;
+        @include respond(mobile){
+            width: 100%;
+            margin: 0 30px;
+        }
+    }
+    h2{
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 900;
+        color: transparent;
+        position: sticky;
+        mix-blend-mode: difference;
+        top: 250px;
+        width: 50%;
+        text-align: center;
+        z-index: 1;
+        font-size: 100px;
+        display: inline-block;
+        margin-top: 100px;
+        @include respond(mobile){
+            margin-bottom: 30px;
+            font-size: 100px;
+        }
+    }
+    .white{
+        position: relative;
+        background-color: #fff;
+        height: 700px;
+        width: 100%;
+        top: -500px;
+    }
+    .black{
+        position: relative;
+        background-color: $d-grey;
+        height: 300px;
+        width: 100%;
+        top: -500px;
+    }
+}
+.map{
+    height: 200vh;
+    background-color: $d-grey;
+    position: relative;
+    top: -500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    padding-top: 100px;
+    // border: 1px solid white;
+    h3{
+        margin-bottom: 24px;
+        width: 100%;
+        color: #fff;
+        top: 600px;
+        left: 10%;
+        position: relative;
+    }
+    .textArea{
+        // border: 1px solid white;
+        width: 30%;
+        position: relative;
+        top: 300px;
+        ul{
+            margin-left: 20%;
+        }
+        li{
+            margin-top: 30px;
+            &:nth-child(2n+2){
+                margin-left: 20%;
+                width: 100%;
+            }
+            h6{
+                font-size: 20px;
+                border-bottom: 1px solid white;
+                width: 40%;
+                padding-bottom: 8px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    svg{
+        padding-top: 0px;
+        width: 50%;
+        position: relative;
+        height: 100vh;
+        path{
+            stroke: white;
+            fill: transparent;
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                fill: $cyan;
+                transform: translate(-5px,-5px);
+            }
+        }
+    }
+}
+.aboutus{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    h2{
+        color: transparent;
+        -webkit-text-stroke: 1px $d-grey;
+        font-weight: 900;
+        position: relative;
+        top: -250px;
+    }
+    p{
+        width: 30%;
+        line-height: 30px;
+        letter-spacing: 5px;
+        position: relative;
+        top: -250px;
+    }
+}
+
+@keyframes fly {
+    0%{
+        transform: translate(-50%,0%);
+    }
+    50%{
+        transform: translate(-50%,-3%);
+    }
+    100%{
+        transform: translate(-50%,0%);
+    }
+}

@@ -1,5 +1,5 @@
 const { src, series, dest, parallel, watch } = require('gulp');
-
+  
 const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass');
@@ -90,7 +90,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index: 'scooter.html', //需更改成自己頁面的名稱
+            index: 'index.html', //需更改成自己頁面的名稱
             injectChanges: false,
         },
     });
@@ -100,6 +100,7 @@ exports.browser = function browsersync() {
     watch('./dev/**/*.html', includeHTML).on('change', reload);
     watch('./dev/images/**', moveImg).on('change', reload);
     watch('./dev/js/*.js', moveJS).on('change', reload);
+    watch('./dev/fonts/*', moveFonts).on('change',reload);
 };
 
 exports.w = function watchFiles() {
@@ -108,6 +109,7 @@ exports.w = function watchFiles() {
     watch('./dev/**/*.html', includeHTML);
     watch('./dev/images/**', moveImg);
     watch('./dev/js/*.js', moveJS);
+    watch('./dev/fonts/*', moveFonts);
 };
 
 
