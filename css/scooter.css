@@ -255,18 +255,10 @@ footer li a {
 }
 
 .banner .mcy {
-  max-width: 300px;
-}
-
-.banner .mcy h1 {
-  color: transparent;
-  -webkit-text-stroke: 2px #555;
   position: absolute;
   top: 30%;
-  transform: translate(25%, -50%);
-  font-size: 120px;
-  letter-spacing: 30px;
-  font-weight: bold;
+  width: 100%;
+  transform: translate(13%, -45%);
 }
 
 .banner img {
@@ -300,5 +292,12 @@ footer li a {
   display: flex;
   justify-content: center;
   margin: 150px 50px;
+}
+
+.new .arrival img {
+  width: 20%;
+  height: 300px;
+  border: 1px solid #000;
+  object-fit: contain;
 }
 /*# sourceMappingURL=scooter.css.map */
