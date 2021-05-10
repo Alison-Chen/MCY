@@ -1,0 +1,36 @@
+@import "../all.scss";
+body{
+    background: #f55c47;
+    transition: background .3s;
+}
+.banner{
+    position: relative;
+    .scroll-words{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+.bg-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+h2{
+    font-size: 90px;
+    font-family: 'roboto';
+}
+p{
+    width: 50%;     
+}
+h1{
+    font-size: 120px;
+    width: 100%;
+    text-align: center;
+    font-family: 'roboto';
+    background-color: #fff;
+}
