@@ -4,7 +4,7 @@
     position: relative;
     .mcy{
         position: absolute;
-        top:30%;
+        top:35%;
         width: 100%;
         transform: translate(13%, -45%);
     }
@@ -14,21 +14,23 @@
         width: 60%;
         position: relative;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, 12%);
     }
+    
     button{
         position: absolute;
-        left: 75%;
-        bottom: 10%;
+        left: 10%;
+        // bottom: 10%;
         transform: translate(50%, -50%);
+        @include btn(white);
+        color:black;
     }
     .num{
         list-style: none;
         display:flex;
         justify-content: center;
         color: #555;
-        margin: 35px;
+        margin: 70px;
         li{
             padding: 0 15px;
            
@@ -36,17 +38,54 @@
     }
 }
 .new{
-    display: flex;
-    justify-content: center;
-    margin: 150px 50px;
+    text-align: center;
+    margin: 150px 20px;
+    // border: 1px solid #000;
     .arrival{
-        
-        img{
-            width: 20%;
-            height: 300px;
-            border: 1px solid #000;
-            object-fit: contain;
-            
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        // border: 1px solid red;
+        .pic1{
+           img{
+                width: 300px;
+                max-width: 100%;
+                // height: 300px;
+                // border: 1px solid #000;
+                object-fit: contain;
+            }
+            h4{
+                padding: 10px;
+            }
         }
+        
     }
-}
+}    
+    .chooseall{
+        text-align: center;
+        #scooter{
+            margin: 10px;
+            border-radius: 15px;
+            font-size: 15px;
+            padding: 5px;
+        }
+        .allpic{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            .pic1{
+                margin: 35px 10px;
+                img{ 
+                    width: 300px;
+                    max-width: 100%;
+                    // border: 1px solid #000;
+                    object-fit: contain;
+                }
+                h4{
+                    padding: 10px;
+                }
+            }
+        }
+        
+    }
