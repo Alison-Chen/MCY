@@ -22,7 +22,7 @@
         left: 10%;
         // bottom: 10%;
         transform: translate(50%, -50%);
-        @include btn(white);
+        @include btn(white,black);
         color:black;
     }
     .num{
