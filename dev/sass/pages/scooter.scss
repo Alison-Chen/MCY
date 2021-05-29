@@ -1,5 +1,149 @@
 @import "../all";
-
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+    @include respond(middle){
+        height: 1000px;
+        max-height: 100%;
+    }
+    @include respond(mobile){
+        height: 700px;
+        max-height: 100%;
+    }
+    .left,.right{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+    }
+    .left{
+        background-color: #fff;
+    }
+    .right{
+        background-color: #022889;
+        left: 50%;
+    }
+    .categories{
+        z-index: 1;
+        position: absolute;
+        left: 50px;
+        top: 450px;
+        left: 5%;
+        transform : translateY(-50%);
+        @include respond(middle){
+            top: 50%;
+        }
+        @include respond(pad){
+            display: none;
+        }
+        // width: 300px;
+        // max-width: 100%;
+        // border: 1px solid $d-grey;
+        li{
+            cursor: pointer;
+            padding: 20px;
+            // border: 1px solid $d-grey;
+        }
+    }
+    .slogan{
+        position: absolute;
+        right: 15%;
+        top: 700px;
+        text-align: center;
+        color: #fff;
+        @include respond(large){
+            right: 5%;
+        }
+        @include respond(middle){
+            top: 80%;
+        }
+        @include respond(mobile){
+            right: 2%;
+        }
+        h6{
+            font-size: 20px;
+            @include respond(mobile){
+                font-size: 14px;
+            }
+        }
+        .btn{
+            margin-top: 30px;
+            @include btn(white,$cyan);
+            @include respond(mobile){
+                margin-top: 16px;
+            }
+        }
+    }
+    .product-img{
+        max-width: 50%;
+        position: absolute;
+        top: 5%;
+        left: 48%;
+        transform: translate(-50%,0%);
+        animation: fly 4s ease-in-out infinite;
+        z-index: 1;
+        @include respond(middle){
+            top: 20%;
+        }
+        @include respond(mobile){
+            top: 30%;
+        }
+    }
+    .product-text{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-family: 'agnecyFB';
+        // border: 1px solid #000;
+        .product-title{
+            @include respond(max){
+                font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
+            }
+            @include respond(large){
+                font-size: calc(1.2rem + (250 - 1) * ((100vw - 900px) / (1200 - 350)));
+            }
+            @include respond(middle){
+                font-size: calc(1.2rem + (300 - 1) * ((100vw - 800px) / (1200 - 350)));
+                letter-spacing: 70px;
+                top: 200px;
+            }
+            @include respond(pad){
+                font-size: 80px;
+                // top: 175px;
+                // padding-right: 300px;
+                letter-spacing: 50px;
+            }
+            @include respond(mobile){
+                font-size: calc(1.2rem + (200 - 1) * ((100vw - 300px) / (1200 - 350)));
+                letter-spacing: 30px;
+                top: 150px;
+            }
+            // border: 1px solid #000;
+            top: 50px;
+            letter-spacing: 100px;
+            width: 100vw;
+            max-width: 100%;
+            position: relative;
+            // top: 400px;
+            .type{
+                color: #000;
+                position: absolute;
+                left: 20%;
+                @include respond(mobile){
+                    left: 15%;
+                }
+            }
+            .model{
+                color: #fff;
+                position: absolute;
+                left: 55%;
+            }
+        }
+    }
+}
 .banner{
     position: relative;
     .mcy{

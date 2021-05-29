@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/component/logo.ico" type="image/x-icon"/>
     <!-- owl.carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link> -->
     <link rel="stylesheet" href="./css/pages/scooterInfo.css">
    
     <title>商品詳情</title>
@@ -15,54 +15,49 @@
 <body>
     @@include("./component/header.html")
 
-    <div class="detailall">
+    <div class="detailall" id="app">
         <div class="detail">
-            <h3>JY-158X系列<h3>
-            <p>馬達:48V-800W-DC無刷馬達</p>
-            <p>電池:52V/13Ah鋰電池
-            <p>爬坡度:約18%</p>
-            <p>續航力:約35~45KM</p>
-            <p>剎車:前後鼓煞</p>
-            <p>時速:25公里/小時</p>
-            <p>輪胎尺寸:14*3.2(3.0-10)</p>
-            <p>車重:60公斤(含電池)</p>
-                <label for="custom_radio" class="radio c1">
-                    <input type="radio" name="color" id="custom_radio" class="radio_input" checked>
-                    <div class="changecolor w"></div>
-                     
-                </label>
-                 <label for="custom_radio1" class="radio c2">
+            <h3>{{type}}系列<h3>
+            <p v-html="info"></p>
+            <form>
+                <label for="custom_radio1" class="radio c2">
                     <input type="radio" name="color" id="custom_radio1" class="radio_input" checked>
                     <div class="changecolor b"></div>
-                      
                 </label>
-                 <label for="custom_radio2" class="radio c3">
-                    <input type="radio" name="color" id="custom_radio2" class="radio_input" checked>
+                <label for="custom_radio" class="radio c1">
+                    <input type="radio" name="color" id="custom_radio" class="radio_input">
+                    <div class="changecolor w"></div>
+                </label>
+                <label for="custom_radio2" class="radio c3">
+                    <input type="radio" name="color" id="custom_radio2" class="radio_input">
                     <div class="changecolor g"></div>
-                      
                 </label>
-                 <label for="custom_radio3" class="radio c4">
-                    <input type="radio" name="color" id="custom_radio3" class="radio_input" checked>
+                <label for="custom_radio3" class="radio c4">
+                    <input type="radio" name="color" id="custom_radio3" class="radio_input">
                     <div class="changecolor bk"></div>
-                      
                 </label>
+            </form>
         </div>
-        <div class="owl-carousel owl-theme">
+        <div class="detailImg" @mousemove="changeImg" @touchmove="changeImg">
+            <img src="./images/scooter/158X/158_b.png" alt="">
+        </div>
+        <!-- <div class="owl-carousel owl-theme">
             <div class="item"> <img src="./images/scooter/158X/158-b.png" alt="JY-158X"></div>
             <div class="item"> <img src="./images/scooter/158X/158-bk.png" alt="JY-158X"></div>
             <div class="item"> <img src="./images/scooter/158X/158-g.png" alt="JY-158X"></div>
-        </div>
+        </div> -->
     </div>
     <div class="dm">
-            <img src="./images/scooter/158X/158X_dm.png">
+        <img src="./images/scooter/158X/158X_dm.png">
     </div>
     
-   
     @@include("./component/footer.html")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
+    <script src="./js/scooterinfo.js"></script>
 </body>
 
 <!-- owl.carousel -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="js/carousel.js"></script>
 <script>
@@ -74,5 +69,5 @@
         })
         
 
-</script>
+</script> -->
 </html>
