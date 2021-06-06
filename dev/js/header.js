@@ -3,7 +3,7 @@ const navSlide = () => {
     const nav = document.querySelector(".nav-links");
     const navLinks = document.querySelectorAll(".nav-links li");
     const burger = document.querySelector(".burger");
-    const menu = document.querySelector(".burgerMenu span");
+    const menu = document.querySelector(".burgerMenu p");
     const n = document.querySelector("nav");
 
     burgerMenu.addEventListener("click", () => {
