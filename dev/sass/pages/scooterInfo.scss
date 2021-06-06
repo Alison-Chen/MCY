@@ -35,16 +35,16 @@
             box-sizing: border-box;
             padding: 2px;
         }
-        .w{
+        .white{
             background: white;
         }
-        .b{
+        .blue{
             background: blue;
         }
-        .g{
+        .grey{
             background: gray;
         }
-        .bk{
+        .black{
             background: black;
         }
         .changecolor::after {
@@ -68,7 +68,6 @@
     }
     .detailImg{
         width: 500px;
-        // border: 1px solid #000;
     }
     // .owl-carousel{
     //        width: 500px;

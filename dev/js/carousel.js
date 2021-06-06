@@ -1,7 +1,9 @@
 $(".owl-carousel").owlCarousel({
-    loop: true, // 循環播放
-    margin: 10, // 外距 10px
-    nav: true, // 顯示點點
+    loop: false, // 循環播放
+    margin: 200, // 外距 10px
+    nav: false, // 顯示點點
+    dots: false,
+    autoWidth: true,
     responsive: {
       0: {
         items: 1 // 螢幕大小為 0~600 顯示 1 個項目

@@ -1,3 +1,5 @@
+const src = document.querySelector(".detailImg img").src;
+
 let vm = new Vue({
     el: "#app",
     data: {
@@ -10,18 +12,18 @@ let vm = new Vue({
                 時速:25公里/小時<br>
                 輪胎尺寸:14*3.2(3.0-10)<br>
                 車重:60公斤(含電池)</p>`,
-        src: "./images/scooter/158X/158_b.png==./images/scooter/158X/158_b_1.png==./images/scooter/158X/158X_black.png==./images/scooter/158X/158X_black_1.png"
+        src: "./images/scooter/158X/158_blue.png==./images/scooter/158X/158_blue_1.png==./images/scooter/158X/158X_black.png==./images/scooter/158X/158X_black_1.png"
     },
     methods:{
-        changeImg(e) {
-            const detailImg = document.querySelector(".detailImg");
-            const scooterImg = document.querySelector(".detailImg img");
-            const detailImgHalf = detailImg.clientWidth / 2;
-            if(e.offsetX > detailImgHalf){
-                scooterImg.src = "./images/scooter/158X/158_b_1.png"
-            }else{
-                scooterImg.src = "./images/scooter/158X/158_b.png"
-            }
-        }
+        // changeImg(e) {
+        //     const detailImg = document.querySelector(".detailImg");
+        //     const scooterImg = document.querySelector(".detailImg img");
+        //     const detailImgHalf = detailImg.clientWidth / 2;
+        //     if(e.offsetX > detailImgHalf){
+        //         scooterImg.src = src;
+        //     }else{
+        //         scooterImg.src = "./images/scooter/158X/158_blue_1.png"
+        //     }
+        // }
     },
 })

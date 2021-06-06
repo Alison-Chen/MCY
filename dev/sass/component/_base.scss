@@ -41,7 +41,7 @@ $fontScale: (
     "h1": 80px,
     "h2": 60px,
     "h3": 52.5px,
-    "h4": 18px,
+    "h4": 48px,
     "h5": 37.5px,
     "h6": 30px,
     "p" : 16px,
@@ -53,7 +53,18 @@ $fontScale: (
         font-size: $s;
     } 
 };
+//margin
+@for $i from 1 to 10 {
+    .mt-#{$i}{
+        margin-top: $i * 8px;
+    }
+}
 
+@each $f,$s in $fontScale{
+    #{$f},.#{$f}{
+        font-size: $s;
+    } 
+};
 //按鈕
 @mixin btn($word-color, $bg-color){
     // width: 120px;
