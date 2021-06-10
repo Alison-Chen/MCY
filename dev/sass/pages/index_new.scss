@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 80px 0;
+    margin: 150px 0 ;
     .slogan{
         // border: 1px solid #000;
         width: 35%;
@@ -73,5 +73,55 @@
     .swiper-slide-active{
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $d-grey;
+    color: white;
+    padding: 150px 0;
+    position: relative;
+    // img{
+    //     border: 1px solid red;
+    //     animation: rotate 8s infinite linear;
+    //     width: 20%;
+    // }
+    // @keyframes rotate{
+    //     0%{
+    //         transform: rotate(0deg);
+    //     }
+    //     100%{
+    //         transform: rotate(360deg);
+    //     }
+    // }
+    .title{
+        width: 40%;
+        .color-1{
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+        rect{
+            fill: transparent;
+            stroke: #fff;
+        }
+            /* Letter path */
+
+        .letter__layer {
+            fill: none;
+        }
+    }
+    .introduce{
+        // margin-left: 80px;
+        h2{
+            margin-bottom: 32px;
+            font-size: 32px;
+            font-weight: 900;
+        }
+        p{
+            line-height: 30px;
+        }
     }
 }
