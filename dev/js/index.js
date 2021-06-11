@@ -28,7 +28,6 @@ TweenMax.from(".slogan", 1.6, {
 TweenMax.from(".product-img", 3, {
     delay: 1.5,
     opacity: 0,
-    y: 50,
     ease: Expo.easeInOut,
 })
 
