@@ -1,7 +1,7 @@
 let swiper = new Swiper('.swiper-container', {
     grabCursor: true,
     slidesPerView: 'auto',
-    // centerSlides: true,
+    centeredSlides: true,
     spaceBetween: 80,
     // loop: true,
     breakpoints: {

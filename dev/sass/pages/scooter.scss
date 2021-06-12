@@ -1,18 +1,9 @@
 @import "../all";
 .wrapper{
-    width: 100%;
-    height: 100vh;
+    // z-index: 1;
     position: relative;
-    z-index: 2;
-    // border: 1px solid #000;
-    @include respond(middle){
-        // height: 1000px;
-        max-height: 100%;
-    }
-    @include respond(mobile){
-        // height: 700px;
-        max-height: 100%;
-    }
+    height: 100vh;
+    width: 100%;
     .left,.right{
         position: absolute;
         width: 50%;
@@ -24,6 +15,28 @@
     .right{
         background-color: #022889;
         left: 50%;
+    }
+    .product-img{
+        position: absolute;
+        width: 30%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+    .product-text{
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-100%);
+        .product-title{
+            font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
+            letter-spacing: 60px;
+            .model{
+                color: #fff;
+                margin-left: 30%;
+            }
+        }
     }
     .slogan{
         position: absolute;
@@ -54,79 +67,195 @@
             }
         }
     }
-    .product-img{
-        width: 35%;
+    .rights{
         position: absolute;
-        top: 40%;
-        left: 48%;
-        transform: translate(-50%,-50%);
-        animation: fly 4s ease-in-out infinite;
-        z-index: 1;
-        @include respond(middle){
-            top: 25%;
-        }
-        @include respond(mobile){
-            top: 30%;
-            width: 80%;
-        }
-    }
-    .product-text{
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center;
-        font-family: 'agnecyFB';
-        // border: 1px solid #000;
-        @include respond(mobile){
-            top: 60%;
-        }
-        .product-title{
-            @include respond(max){
-                font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
-            }
-            @include respond(large){
-                font-size: calc(1.2rem + (250 - 1) * ((100vw - 900px) / (1200 - 350)));
-            }
-            @include respond(middle){
-                font-size: calc(1.2rem + (300 - 1) * ((100vw - 800px) / (1200 - 350)));
-                letter-spacing: 70px;
-                top: 200px;
-            }
-            @include respond(pad){
-                font-size: 80px;
-                // top: 175px;
-                // padding-right: 300px;
-                letter-spacing: 50px;
-            }
-            @include respond(mobile){
-                font-size: calc(1.2rem + (200 - 1) * ((100vw - 300px) / (1200 - 350)));
-                letter-spacing: 30px;
-                top:70%;
-            }
+        left: -200px;
+        top: 50%;
+        transform: rotate(90deg);
+        color: #d8d8d4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .marquee{
+            // margin-bottom: 30px;
+            margin-left: 100px;
+            height: 15px;
+            width: 100px;
             // border: 1px solid #000;
-            top: 50px;
-            letter-spacing: 100px;
-            width: 100vw;
-            max-width: 100%;
+            overflow: hidden;
             position: relative;
-            // top: 400px;
-            .letter{
-                color: #000;
+            div{
+                display: block;
+                width: 200px;
+                height: 30px;
                 position: absolute;
-                left: 20%;
-                @include respond(mobile){
-                    left: 15%;
-                }
+                overflow: hidden;
+                animation: marquee 2s linear infinite;
             }
-            .model{
-                color: #fff;
-                position: absolute;
-                left: 55%;
+            span{
+                color: #666;
+                float: left;
+                width: 50%;
+            }
+            @keyframes marquee {
+                0% { left: 0; }
+                100% { left: -100%; }
+            }
+        }
+        img{
+            transform: rotate(-90deg);
+            margin-left: 24px;
+            animation: scroll 1s infinite linear alternate;
+        }
+        @keyframes scroll {
+            0%{
+                transform: translateX(0px) rotate(-90deg)
+            }
+            100%{
+                transform: translateX(10px) rotate(-90deg);
             }
         }
     }
 }
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+// .wrapper{
+//     width: 100%;
+//     height: 90vh;
+//     position: relative;
+//     z-index: 2;
+//     // border: 1px solid #000;
+//     @include respond(middle){
+//         // height: 1000px;
+//         max-height: 100%;
+//     }
+//     @include respond(mobile){
+//         // height: 700px;
+//         max-height: 100%;
+//     }
+//     .left,.right{
+//         position: absolute;
+//         width: 50%;
+//         height: 100%;
+//     }
+//     .left{
+//         background-color: #fff;
+//     }
+//     .right{
+//         background-color: #022889;
+//         left: 50%;
+//     }
+//     .slogan{
+//         position: absolute;
+//         right: 15%;
+//         top: 70%;
+//         text-align: center;
+//         color: #fff;
+//         @include respond(large){
+//             right: 5%;
+//         }
+//         @include respond(middle){
+//             top: 80%;
+//         }
+//         @include respond(mobile){
+//             right: 2%;
+//         }
+//         h6{
+//             font-size: 20px;
+//             @include respond(mobile){
+//                 font-size: 14px;
+//             }
+//         }
+//         .btn{
+//             margin-top: 30px;
+//             @include btn(white,$cyan);
+//             @include respond(mobile){
+//                 margin-top: 16px;
+//             }
+//         }
+//     }
+//     .product-img{
+//         width: 30%;
+//         position: absolute;
+//         top: 0%;
+//         left: 48%;
+//         transform: translate(-50%,0%);
+//         animation: fly 4s ease-in-out infinite;
+//         z-index: 1;
+//         @include respond(middle){
+//             top: 25%;
+//         }
+//         @include respond(mobile){
+//             top: 30%;
+//             width: 80%;
+//         }
+//     }
+//     .product-text{
+//         position: absolute;
+//         top: 15%;
+//         left: 50%;
+//         transform: translate(-50%,-50%);
+//         text-align: center;
+//         font-family: 'agnecyFB';
+//         // border: 1px solid #000;
+//         @include respond(mobile){
+//             top: 60%;
+//         }
+//         .product-title{
+//             @include respond(max){
+//                 font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
+//             }
+//             @include respond(large){
+//                 font-size: calc(1.2rem + (250 - 1) * ((100vw - 900px) / (1200 - 350)));
+//             }
+//             @include respond(middle){
+//                 font-size: calc(1.2rem + (300 - 1) * ((100vw - 800px) / (1200 - 350)));
+//                 letter-spacing: 70px;
+//                 top: 200px;
+//             }
+//             @include respond(pad){
+//                 font-size: 80px;
+//                 // top: 175px;
+//                 // padding-right: 300px;
+//                 letter-spacing: 50px;
+//             }
+//             @include respond(mobile){
+//                 font-size: calc(1.2rem + (200 - 1) * ((100vw - 300px) / (1200 - 350)));
+//                 letter-spacing: 30px;
+//                 top:70%;
+//             }
+//             // border: 1px solid #000;
+//             top: 50px;
+//             letter-spacing: 100px;
+//             width: 100vw;
+//             max-width: 100%;
+//             position: relative;
+//             // top: 400px;
+//             .letter{
+//                 color: #000;
+//                 position: absolute;
+//                 left: 20%;
+//                 @include respond(mobile){
+//                     left: 15%;
+//                 }
+//             }
+//             .model{
+//                 color: #fff;
+//                 position: absolute;
+//                 left: 55%;
+//             }
+//         }
+//     }
+// }
 
 section{
     padding-top: 80px;
