@@ -90,7 +90,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index: 'index_new.html', //需更改成自己頁面的名稱
+            index: 'scooterDetail.html', //需更改成自己頁面的名稱
             injectChanges: false,
         },
     });
