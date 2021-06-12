@@ -26,19 +26,21 @@
         width: 35%;
         line-height: 60px;
         font-weight: 900;
-        padding-left: 5%;
+        padding-left: 8%;
         h4{
-            font-size: 40px;
-            line-height: 80px;
+            font-size: 30px;
+            line-height: 60px;
         }
         h5{
-            font-size: 25px;
-            line-height: 50px;
+            font-size: 20px;
+            line-height: 40px;
             color: grey;
         }
         .btn{
             @include btn(white,$d-grey);
             width: 150px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
             padding: 0;
         }
@@ -69,9 +71,6 @@
             }
         }
     }
-    .last{
-        width: 1%;
-    }
     .swiper-slide-active{
         opacity: 1;
         transform: scale(1);
@@ -86,24 +85,14 @@
     color: white;
     padding: 150px 0;
     position: relative;
-    // img{
-    //     border: 1px solid red;
-    //     animation: rotate 8s infinite linear;
-    //     width: 20%;
-    // }
-    // @keyframes rotate{
-    //     0%{
-    //         transform: rotate(0deg);
-    //     }
-    //     100%{
-    //         transform: rotate(360deg);
-    //     }
-    // }
     .title{
         width: 40%;
         .color-1{
             stroke: #fff;
             stroke-width: 1px;
+        }
+        .animation{
+            animation: textAnimation 3s ease-in-out infinite alternate;
         }
         rect{
             fill: transparent;
@@ -113,6 +102,16 @@
 
         .letter__layer {
             fill: none;
+        }
+    }
+    @keyframes textAnimation {
+        0%{
+            stroke-dasharray: 40;
+            opacity: 0;
+        }
+        100%{
+            stroke-dasharray: 400;
+            opacity: 1;
         }
     }
     .introduce{
