@@ -298,7 +298,8 @@ section{
                 max-width: 100%;
             }
             .btn{
-                @include btn(white,$d-grey);
+                @include btn-lighten(white,#000);
+                // border: 1px solid #000;
             }
         }
     }
@@ -337,7 +338,7 @@ section{
                 max-width: 50%;
             }
             a{
-                @include btn(white,$d-grey);
+                @include btn-lighten(white,#000);
                 font-weight: 500;
             }
         }

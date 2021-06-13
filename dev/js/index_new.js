@@ -21,3 +21,7 @@ function changeBg() {
 }
 
 window.addEventListener("scroll", changeBg);
+
+//aos
+
+Aos.init();
