@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/pages/index_new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     @@include("./component/header.html")
@@ -18,7 +19,9 @@
         </div>
     </div>
     <div class="recommend">
-        <div class="slogan">
+        <div class="slogan" 
+            data-aos="fade-up"
+            data-aos-duration="2000">
             <h4>MCY MOTOR<br>電動自行車</h4>
             <h5 class="mt-2">以創新、安全為主要核心<br>致力於打造質感、舒適的騎乘體驗。</h5>
             <a href="scooter.html" class="btn mt-4">更多車款</a>
@@ -123,7 +126,9 @@
                 <rect class="cls-1" x="0.43" y="123.84" width="69.3" height="4.67"/>
             </svg>
         </div>
-        <div class="introduce">
+        <div class="introduce" 
+            data-aos="fade-up"
+            data-aos-duration="1500">
             <h2>美家園 MCY MOTOR</h2>
             <p>美家園成立於1997年3月，是專業的機車製造商。
                 <br>
@@ -144,9 +149,10 @@
         </div>
     </div>
     @@include("./component/footer.html")
-    <script src="./js/anime.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/anime.js"></script>
     <script src="./js/swiper.js"></script>
 </body>
 </html>

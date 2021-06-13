@@ -11,3 +11,8 @@ window.addEventListener("scroll", function(){
         svg.classList.remove("animation")
     }
 })
+
+
+//aos
+
+AOS.init();
