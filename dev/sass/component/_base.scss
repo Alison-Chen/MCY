@@ -5,6 +5,10 @@ body{
     width: 100%;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: taipeisans;
     src: url(../../fonts/TaiPeiSansTCBeta-Light.ttf),
