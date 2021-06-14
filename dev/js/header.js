@@ -25,6 +25,16 @@ const navSlide = () => {
             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 4 + 1}s`;
         }
     })
+
+    document.addEventListener("click",function(e){
+        if(!nav.contains(e.target) && !burgerMenu.contains(e.target)){
+            nav.classList.remove("nav-active")
+            menu.textContent = "MENU"
+            burger.classList.remove("toggle")
+        }
+    })
 }
 
 navSlide();
+
+
