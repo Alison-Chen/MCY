@@ -4,17 +4,27 @@
     position: relative;
     height: 100vh;
     width: 100%;
+    .swiper-slide{
+        height: 100vh;
+    }
     .left,.right{
         position: absolute;
         width: 50%;
         height: 100%;
     }
     .left{
+        position: relative;
         background-color: #fff;
     }
     .right{
         background-color: #022889;
         left: 50%;
+    }
+    .bg-1{
+        background-color: maroon;
+    }
+    .bg-2{
+        background-color: steelblue;
     }
     .product-img{
         position: absolute;
@@ -40,6 +50,7 @@
     }
     .slogan{
         position: absolute;
+        z-index: 100000;
         right: 15%;
         top: 70%;
         text-align: center;
