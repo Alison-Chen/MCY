@@ -4,18 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link rel="stylesheet" href="./css/pages/scooter.css">
     <title>Scooter</title>
 </head>
 <body>
     @@include("./component/header.html")
     <div class="wrapper">
-        <div class="right"></div>
-        <div class="swipe">
-            <div class="left"></div>
-            <img src="./images/scooter/158X/158X-b.png" alt="JY-158S" class="product-img">
-            <div class="product-text">
-                <h2 class="product-title"><span class="letter">JY</span><span class="model">158S</span></h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="right"></div>
+                        <div class="swipe">
+                            <div class="left"></div>
+                            <img src="./images/scooter/158X/158_blue.png" alt="JY-158S" class="product-img">
+                            <div class="product-text">
+                                <h2 class="product-title"><span class="letter">JY</span><span class="model">158X</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="right bg-1"></div>
+                        <div class="swipe">
+                            <div class="left"></div>
+                            <img src="./images/scooter/158S/158S_r.png" alt="JY-158S" class="product-img">
+                            <div class="product-text">
+                                <h2 class="product-title"><span class="letter">JY</span><span class="model">158S</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="right bg-2"></div>
+                        <div class="swipe">
+                            <div class="left"></div>
+                            <img src="./images/scooter/158A/158A_w.png" alt="JY-158S" class="product-img">
+                            <div class="product-text">
+                                <h2 class="product-title"><span class="letter">JY</span><span class="model">158L</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="slogan">
@@ -33,7 +66,6 @@
             <a href="#newArrivals"><img src="./images/component/scrolldown_arrow.svg" alt=""></a>
         </div>
     </div>
-
     <section id="newArrivals">
         <div class="scooter-title mt-5">
             <div class="title">
@@ -206,7 +238,9 @@
     </div> -->
     
     @@include("./component/footer.html")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/scooter_swiper.js"></script>
 </body>
 </html>
