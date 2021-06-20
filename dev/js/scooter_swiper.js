@@ -26,7 +26,7 @@ let tl = new TimelineMax();
         ease: Expo.easeInOut,
     })
 
-    tl.repeat(1).yoyo(true).kill(true)
+    tl.repeat(1).yoyo(true)
 
 let swiper = new Swiper('.swiper-container', {
     grabCursor: false,
