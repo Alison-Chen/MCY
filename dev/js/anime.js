@@ -16,3 +16,11 @@ window.addEventListener("scroll", function(){
 //aos
 
 AOS.init();
+
+
+//loading
+const loading = document.querySelector(".loading");
+window.setTimeout(() => {
+    loading.style.opacity = 0
+    loading.style.zIndex = 0;
+}, 2000);

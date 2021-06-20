@@ -1,47 +1,44 @@
-function animate() {
-    TweenMax.from(".left", 1.6, {
-        delay: 0.6,
-        height: 0,
+let tl = new TimelineMax();
+
+    tl.to(".right", 1.6, {
+        delay: 0,
+        height: "100vh",
         ease: Expo.easeInOut
     })
 
-    TweenMax.from(".right", 1.6, {
-        delay: 0.8,
-        height: 0,
-        ease: Expo.easeInOut
-    })
+    // tl.from(".slogan", 1.6, {
+    //     delay: -1,
+    //     opacity: 0,
+    //     y: -20,
+    //     ease: Expo.easeInOut
+    // })
 
-    TweenMax.from(".slogan", 1.6, {
-        delay: 1,
-        opacity: 0,
-        y: -20,
-        ease: Expo.easeInOut
-    })
-
-
-    TweenMax.from(".product-img", 3, {
-        delay: 1.5,
-        opacity: 0,
+    tl.to(".product-text", 3, {
+        delay: -1.8,
+        opacity: 1,
+        top: "15%",
         ease: Expo.easeInOut,
     })
 
-    TweenMax.from(".product-text", 3, {
-        delay: 1.8,
-        opacity: 0,
-        top: 15,
-        ease: Expo.easeInOut
+    tl.to(".product-img", 3, {
+        delay: -1.5,
+        opacity: 1,
+        ease: Expo.easeInOut,
     })
 
-}
+    tl.repeat(1).yoyo(true).kill(true)
 
 let swiper = new Swiper('.swiper-container', {
-    // grabCursor: true,
-    // effect: "fade",
+    grabCursor: false,
     slidesPerView: 'auto',
     centeredSlides: true,
     noSwiping: true,
     allowTouchMove: false,
     noSwipingClass: "no-swiping",
+        effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
     // loop: true,
     breakpoints: {
         1920: {
@@ -61,16 +58,13 @@ let swiper = new Swiper('.swiper-container', {
         el: 'swiper-pagination'
     },
     autoplay: {
-        delay: 6000,
+        delay: 9000,
         disableOnInteraction: false,
     },
-    speed: 800,
+    // speed: 1500,
     on:{
-        init: function(){
-            animate()
-        },
         slideChange: function(){
-            animate()
-        }
+            tl.restart();
+        },
     },
 });

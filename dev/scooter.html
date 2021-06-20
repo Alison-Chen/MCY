@@ -11,21 +11,35 @@
 <body>
     @@include("./component/header.html")
     <div class="wrapper">
+        <div class="left"><h2 class="product-title noChange">JY</h2></div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="card">
-                        <div class="right"></div>
-                        <div class="swipe">
-                            <div class="left"></div>
-                            <img src="./images/scooter/158X/158_blue.png" alt="JY-158S" class="product-img">
-                            <div class="product-text">
-                                <h2 class="product-title"><span class="letter">JY</span><span class="model">158X</span></h2>
-                            </div>
-                        </div>
+                        <div class="right"><h2 class="product-title product-text">158X</h2></div>
+                        <div class="left"></div>
+                        <img src="./images/scooter/158X/158_blue.png" alt="JY-158S" class="product-img">
                     </div>
                 </div>
                 <div class="swiper-slide">
+                    <div class="card">
+                        <div class="right bg-1">
+                            <h2 class="product-title product-text">158S</h2>
+                        </div>
+                        <div class="left"></div>
+                        <img src="./images/scooter/158S/158S_r.png" alt="JY-158S" class="product-img">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="right bg-2">
+                            <h2 class="product-title product-text">158A</h2>
+                        </div>
+                        <div class="left"></div>
+                        <img src="./images/scooter/158A/158A_w.png" alt="JY-158S" class="product-img">
+                    </div>
+                </div>
+                <!-- <div class="swiper-slide">
                     <div class="card">
                         <div class="right bg-1"></div>
                         <div class="swipe">
@@ -49,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="slogan">
             <h6>最新車款全新上市</h6>
@@ -240,6 +254,7 @@
     @@include("./component/footer.html")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
     <!-- <script src="./js/index.js"></script> -->
     <script src="./js/scooter_swiper.js"></script>
 </body>
