@@ -9,7 +9,7 @@ let tl = new TimelineMax();
         transform: "translate(-50%,-50%)",
         opacity: 1,
         ease: Expo.easeInOut,
-    },'-=1.5').to(".product-text", 3, {
+    },'-=1').to(".product-text", 3, {
         delay: -1.8,
         opacity: 1,
         top: "15%",

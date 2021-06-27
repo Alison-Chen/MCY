@@ -5,13 +5,13 @@ nav{
     background-color: transparent;
     min-height: 8vh;
     font-family: 'Roboto', sans-serif;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10000;
     transition: all .3s ease-in;
     background-color: #fff;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 5px rgba(220,220,220,0.1);
     @include respond(mobile){
         background-color: #fff;
     }
