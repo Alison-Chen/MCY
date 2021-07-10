@@ -15,7 +15,7 @@
         // margin-left: 30px;
         .swiper-container{
             width: 100%;
-            margin: 50px;
+            margin: 0px 50px 50px 50px;
             // border: 1px solid black;
             .howmuch{
                 display: flex;
@@ -37,7 +37,7 @@
             //    border: 1px solid red;
             width: 100%;
             background-color:#F8F8F8;
-            padding: 10px;
+            // padding: 5px;
             
             img{
                 width:60%;
@@ -89,6 +89,9 @@
                         }
                         .black{
                             background: black;
+                        }
+                        .red{
+                            background: red;
                         }
                         .changecolor::after {
                             content:"";
