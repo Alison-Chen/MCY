@@ -1,19 +1,19 @@
 @import "../all.scss";
-.loading{
-    background-color: #fff;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 100000;
-    transition: all .3s;
-    img{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-70%);
-        width: 500px;
-    }
-}
+// .loading{
+//     background-color: #fff;
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     z-index: 100000;
+//     transition: all .3s;
+//     img{
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate(-50%,-70%);
+//         width: 500px;
+//     }
+// }
 .banner{
     position: relative;
     .text{
@@ -36,6 +36,9 @@
     justify-content: space-between;
     margin: 150px 0 ;
     position: relative; 
+    @include respond(pad){
+        flex-direction: column;
+    }
     .slogan{
         // border: 1px solid #000;
         padding-bottom: 100px;
@@ -43,6 +46,11 @@
         line-height: 60px;
         font-weight: 900;
         padding-left: 8%;
+        @include respond(pad){
+            width: 100%;
+            text-align: center;
+            padding-left: 0;
+        }
         h4{
             font-size: 30px;
             line-height: 60px;
@@ -65,6 +73,9 @@
     .swiper-container{
         width: 60%;
         margin: 0;
+        @include respond(pad){
+            width: 100%;
+        }
         // border: 1px solid yellow;
     }
     .swiper-slide{
@@ -76,6 +87,9 @@
         transition: all .3s;
         .card{
             // width: 600px;
+            @include respond(pad){
+                margin: 0 30px;
+            }
             h4{
                 font-weight: 900;
                 font-size: 80px;
@@ -83,7 +97,6 @@
             .dm{
                 max-width: 100%;
                 overflow: hidden;
-                height: 450px;
             }
         }
     }
@@ -101,8 +114,19 @@
     color: white;
     padding: 150px 0;
     position: relative;
+    @include respond(pad){
+        flex-direction: column;
+    }
     .title{
         width: 40%;
+        transform: scale(0.8);
+        // border: 1px solid yellow;
+        @include respond(pad){
+            width: 90%;
+            transform: scale(1);
+            // border: 1px solid red;
+            margin-bottom: 80px;
+        }
         .color-1{
             stroke: #fff;
             stroke-width: 1px;
@@ -131,14 +155,25 @@
         }
     }
     .introduce{
-        // margin-left: 80px;
+        margin-left: 80px;
+        @include respond(pad){
+            margin: 0 30px;
+        }
         h2{
             margin-bottom: 32px;
             font-size: 32px;
             font-weight: 900;
+            @include respond(pad){
+                font-size: 32px;
+                text-align: center;
+            }
         }
         p{
             line-height: 30px;
+            @include respond(pad){
+                font-size: 14px;
+                text-align: center;
+            }
         }
     }
 }
@@ -156,6 +191,12 @@
         font-size: 80px;
         -webkit-text-stroke: 2px #000;
         color: transparent;
+        span{
+            @include respond(mobile){
+                display: block;
+                margin-top: 60px;
+            }
+        }
     }
     a{
         color: #000;
@@ -173,6 +214,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include respond(mobile){
+            display: block;
+            transform: rotate(0deg);
+            bottom: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 12px;
+            flex-direction: column;
+            margin-top: 100px;
+            top: 75%;
+        }
+        p{
+            display: block;
+        }
         img{
             cursor: pointer;
         }
@@ -184,6 +240,11 @@
             // border: 1px solid #000;
             overflow: hidden;
             position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            @include respond(mobile){
+                margin: 0;
+            }
             div{
                 display: block;
                 width: 200px;
@@ -191,6 +252,9 @@
                 position: absolute;
                 overflow: hidden;
                 animation: marquee 2s linear infinite;
+                @include respond(mobile){
+                    width: 200%;
+                }
             }
             span{
                 color: #666;
@@ -202,17 +266,35 @@
                 100% { left: -100%; }
             }
         }
+        a{
+            @include respond(mobile){
+                display: inline-block;
+                margin-left: 20px;
+            }
+        }
         img{
-            transform: rotate(90deg);
             animation: scroll 1s infinite linear alternate;
             margin-left: 30px;
+            @include respond(mobile){
+                animation: scrollMobile 1s infinite linear alternate;
+                margin: 0;
+                width: 80%;
+            }
         }
         @keyframes scroll {
             0%{
-                transform: translateX(0px) rotate(90deg)
+                transform: translateX(0px) rotate(90deg);
             }
             100%{
                 transform: translateX(10px) rotate(90deg);
+            }
+        }
+        @keyframes scrollMobile {
+            0%{
+                transform: translateY(0px) rotate(180deg);
+            }
+            100%{
+                transform: translateY(10px) rotate(180deg);
             }
         }
     }

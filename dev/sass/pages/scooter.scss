@@ -1,6 +1,5 @@
 @import "../all";
 .wrapper{
-    // z-index: 1;
     position: relative;
     height: 100vh;
     width: 100%;
@@ -34,6 +33,12 @@
         transform: translate(-50%,-40%);
         z-index: 2;
         opacity: 0;
+        @include respond(middle){
+            width: 60%;
+        }
+        @include respond(mobile){
+            width: 80%;
+        }
     }
     // .product-text{
     //     position: absolute;
@@ -56,6 +61,13 @@
         color: white;
         font-family: 'agnecyFB';
         // border: 1px solid red;
+        @include respond(middle){
+            font-size: 120px;
+            letter-spacing: 20px;
+        }
+        @include respond(mobile){
+            font-size: 50px;
+        }
     }
     .noChange{
         color: #000;
@@ -81,6 +93,7 @@
         }
         @include respond(mobile){
             right: 2%;
+            top: 65%;
         }
         h6{
             font-size: 20px;
@@ -105,6 +118,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include respond(mobile){
+            display: none;
+        }
         .marquee{
             // margin-bottom: 30px;
             margin-left: 100px;
@@ -157,134 +173,7 @@
         transform: translateY(0px);
     }
 }
-// .wrapper{
-//     width: 100%;
-//     height: 90vh;
-//     position: relative;
-//     z-index: 2;
-//     // border: 1px solid #000;
-//     @include respond(middle){
-//         // height: 1000px;
-//         max-height: 100%;
-//     }
-//     @include respond(mobile){
-//         // height: 700px;
-//         max-height: 100%;
-//     }
-//     .left,.right{
-//         position: absolute;
-//         width: 50%;
-//         height: 100%;
-//     }
-//     .left{
-//         background-color: #fff;
-//     }
-//     .right{
-//         background-color: #022889;
-//         left: 50%;
-//     }
-//     .slogan{
-//         position: absolute;
-//         right: 15%;
-//         top: 70%;
-//         text-align: center;
-//         color: #fff;
-//         @include respond(large){
-//             right: 5%;
-//         }
-//         @include respond(middle){
-//             top: 80%;
-//         }
-//         @include respond(mobile){
-//             right: 2%;
-//         }
-//         h6{
-//             font-size: 20px;
-//             @include respond(mobile){
-//                 font-size: 14px;
-//             }
-//         }
-//         .btn{
-//             margin-top: 30px;
-//             @include btn(white,$cyan);
-//             @include respond(mobile){
-//                 margin-top: 16px;
-//             }
-//         }
-//     }
-//     .product-img{
-//         width: 30%;
-//         position: absolute;
-//         top: 0%;
-//         left: 48%;
-//         transform: translate(-50%,0%);
-//         animation: fly 4s ease-in-out infinite;
-//         z-index: 1;
-//         @include respond(middle){
-//             top: 25%;
-//         }
-//         @include respond(mobile){
-//             top: 30%;
-//             width: 80%;
-//         }
-//     }
-//     .product-text{
-//         position: absolute;
-//         top: 15%;
-//         left: 50%;
-//         transform: translate(-50%,-50%);
-//         text-align: center;
-//         font-family: 'agnecyFB';
-//         // border: 1px solid #000;
-//         @include respond(mobile){
-//             top: 60%;
-//         }
-//         .product-title{
-//             @include respond(max){
-//                 font-size: calc(1.2rem + (170 - 1) * ((100vw - 900px) / (1200 - 350)));
-//             }
-//             @include respond(large){
-//                 font-size: calc(1.2rem + (250 - 1) * ((100vw - 900px) / (1200 - 350)));
-//             }
-//             @include respond(middle){
-//                 font-size: calc(1.2rem + (300 - 1) * ((100vw - 800px) / (1200 - 350)));
-//                 letter-spacing: 70px;
-//                 top: 200px;
-//             }
-//             @include respond(pad){
-//                 font-size: 80px;
-//                 // top: 175px;
-//                 // padding-right: 300px;
-//                 letter-spacing: 50px;
-//             }
-//             @include respond(mobile){
-//                 font-size: calc(1.2rem + (200 - 1) * ((100vw - 300px) / (1200 - 350)));
-//                 letter-spacing: 30px;
-//                 top:70%;
-//             }
-//             // border: 1px solid #000;
-//             top: 50px;
-//             letter-spacing: 100px;
-//             width: 100vw;
-//             max-width: 100%;
-//             position: relative;
-//             // top: 400px;
-//             .letter{
-//                 color: #000;
-//                 position: absolute;
-//                 left: 20%;
-//                 @include respond(mobile){
-//                     left: 15%;
-//                 }
-//             }
-//             .model{
-//                 color: #fff;
-//                 position: absolute;
-//                 left: 55%;
-//             }
-//         }
-//     }
-// }
+
 
 section{
     padding-top: 80px;
@@ -298,12 +187,18 @@ section{
         width: 100%;
         .title{
             font-weight: 900;
-            width: 20%;
+            width: 20%; 
             padding: 16px 0;
             margin: 0 auto;
+            @include respond(mobile){
+                width: 100%;
+            }
             p{
                 width: 50%;
                 margin: 0 auto;
+                @include respond(mobile){
+                    width: 100%;
+                }
             }
             h5{
                 font-size: 28px;
@@ -312,13 +207,22 @@ section{
                 width: 30%;
                 border: 2px solid #000;
                 background-color: #000;
+                @include respond(mobile){
+                    width: 10%;
+                }
             }
         }
     }
+}
+
+#newArrivals{
     .newScooters{
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        @include respond(mobile){
+            flex-direction: column;
+        }
         li{
             margin: 0 60px;
             display: flex;
@@ -399,92 +303,4 @@ section{
         }
     }
 }
-// .banner{
-//     position: relative;
-//     .mcy{
-//         position: absolute;
-//         top:35%;
-//         width: 100%;
-//         transform: translate(13%, -45%);
-//     }
-    
-  
-//     img{
-//         width: 60%;
-//         position: relative;
-//         left: 50%;
-//         transform: translate(-50%, 12%);
-//     }
-    
-//     button{
-//         position: absolute;
-//         left: 10%;
-//         // bottom: 10%;
-//         transform: translate(50%, -50%);
-//         @include btn(white,black);
-//         color:black;
-//     }
-//     .num{
-//         list-style: none;
-//         display:flex;
-//         justify-content: center;
-//         color: #555;
-//         margin: 70px;
-//         li{
-//             padding: 0 15px;
-           
-//         }
-//     }
-// }
-// .new{
-//     text-align: center;
-//     margin: 150px 20px;
-//     // border: 1px solid #000;
-//     .arrival{
-//         display: flex;
-//         justify-content: center;
-//         margin-top: 60px;
-//         // border: 1px solid red;
-//         .pic1{
-//            img{
-//                 width: 300px;
-//                 max-width: 100%;
-//                 // height: 300px;
-//                 // border: 1px solid #000;
-//                 object-fit: contain;
-//             }
-//             h4{
-//                 padding: 10px;
-//             }
-//         }
-        
-//     }
-// }    
-//     .chooseall{
-//         text-align: center;
-//         #scooter{
-//             margin: 10px;
-//             border-radius: 15px;
-//             font-size: 15px;
-//             padding: 5px;
-//         }
-//         .allpic{
-//             display: flex;
-//             flex-wrap: wrap;
-//             justify-content: center;
-//             margin-top: 30px;
-//             .pic1{
-//                 margin: 35px 10px;
-//                 img{ 
-//                     width: 300px;
-//                     max-width: 100%;
-//                     // border: 1px solid #000;
-//                     object-fit: contain;
-//                 }
-//                 h4{
-//                     padding: 10px;
-//                 }
-//             }
-//         }
-        
-//     }
+
