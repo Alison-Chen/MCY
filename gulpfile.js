@@ -2,7 +2,7 @@ const { src, series, dest, parallel, watch } = require('gulp');
   
 const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require("node-sass"));
 const sourceMap = require('source-map');
 const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
@@ -90,7 +90,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index: 'blog.html', //需更改成自己頁面的名稱
+            index: 'index_new.html', //需更改成自己頁面的名稱
             injectChanges: false,
         },
     });

@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/component/logo.ico" type="image/x-icon"/>
-    <!-- owl.carousel -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link> -->
     <link rel="stylesheet" href="./css/pages/scooterDetail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <title>商品詳情</title>
@@ -20,10 +17,10 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="./images/scooter/158X/158_blue_1.png" alt="" class="swiper-img">
+                        <img :src="swiperImgArr[0].imgOne" alt="" class="swiper-img">
                     </div>
                     <div class="swiper-slide">
-                        <img src="./images/scooter/158X/158_blue.png" alt="" class="swiper-img">
+                        <img :src="swiperImgArr[0].imgTwo" alt="" class="swiper-img">
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -34,61 +31,29 @@
                 <p>NT$46,800</p>
             </div>
             <div class="secondBanner">
-                    <div class="secondpic">
-                        <img src="./images/scooter/158X/158Xg_l.png" alt="" style="display:block; margin:auto;">
+                    <div class="secondpic" @mousemove="rotateImg" @touchmove.stop="touchRotate" ref="rotateImg">
+                        <img src="./images/scooter/158X/158Xg_l.png" alt="">
                     </div>
                     <div class="scooterDetail">
                         <div class="choose">
                             <div class="color">
                                 <p>顏色</p>
                                 <form>
-                                    <label for="custom_radio1" class="radio" data-scooter="./images/scooter/158X/158_blue_1.png==./images/scooter/158X/158_blue.png">
-                                        <input type="radio" name="color" id="custom_radio1" class="radio_input" checked>
-                                        <div class="changecolor blue"></div>
-                                    </label>
-                                    <label for="custom_radio" class="radio" data-scooter="./images/scooter/158X/158X_wl.png==./images/scooter/158X/158-w.png">
-                                        <input type="radio" name="color" id="custom_radio" class="radio_input">
-                                        <div class="changecolor white"></div>
-                                    </label>
-                                    <label for="custom_radio3" class="radio" data-scooter="./images/scooter/158X/158X_black_1.png==./images/scooter/158X/158X_black.png">
-                                        <input type="radio" name="color" id="custom_radio3" class="radio_input">
-                                        <div class="changecolor black"></div>
-                                    </label>
-                                    <label for="custom_radio2" class="radio" data-scooter="./images/scooter/158X/158-r.png==./images/scooter/158X/158Xr_1.png">
-                                        <input type="radio" name="color" id="custom_radio2" class="radio_input">
-                                        <div class="changecolor red"></div>
-                                    </label>
-                                    <label for="custom_radio2" class="radio" data-scooter="./images/scooter/158X/158Xg_l.png==./images/scooter/158X/158-g.png">
-                                        <input type="radio" name="color" id="custom_radio2" class="radio_input">
-                                        <div class="changecolor grey"></div>
+                                    <label v-for="(color,colorId) in colors" :for=`custom_radio_${colorId}` class="radio">
+                                        <input type="radio" name="color" :id=`custom_radio_${colorId}` class="radio_input" @click="changeSwiperImg" :data-color="color.color">
+                                        <div class="changecolor" :style="{backgroundColor: color.color}"></div>
                                     </label>
                                 </form>
                             </div>
                         <div class="description">
-                            <p>
-                                剎車:前後鼓煞 <br>
-                                輪胎尺寸:14*3.2(3.0-10) <br>
-                                車重:60公斤(含電池)<br>
-                            </p>
+                            <p v-html="info"></p>
                         </div>
                     </div>
                     <div class="info">
-                        <div class="km">
-                            <p>35~45公里</p>
-                            <span>續航里程(預估值)</span>
-                        </div>
-                        <div class="km">
-                            <p>25公里/小時</p>
-                            <span>時速</span>
-                        </div>
-                        <div class="km">
-                            <p>52V/13Ah</p>
-                            <span>可攜式鋰電池</span>
-                        </div>
-                        <div class="km">
-                            <p>800W</p>
-                            <span>馬達</span>
-                        </div>
+                        <p v-html="km" class="km"></p>
+                        <p v-html="speed" class="km"></p>
+                        <p v-html="battery" class="km"></p>
+                        <p v-html="watt" class="km"></p>
                     </div>
                 </div>
             </div>
@@ -122,23 +87,8 @@
         </a>
     </div>
     @@include("./component/footer.html")
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
-    <script src="./js/detail.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="./js//scooterDetail.js"></script>
 </body>
-
-<!-- owl.carousel -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="js/carousel.js"></script>
-<script>
-        const c2 = document.querySelector(".c2")
-        const blue = document.querySelector(".blue");
-
-        c2.addEventListener("click",function(){
-            c2.classList.toggle("blue");
-        })
-        
-
-</script> -->
 </html>

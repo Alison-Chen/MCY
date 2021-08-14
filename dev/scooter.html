@@ -10,130 +10,79 @@
 </head>
 <body>
     @@include("./component/header.html")
-    <div class="wrapper mt-9">
-        <div class="left"><h2 class="product-title noChange">JY</h2></div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="card">
-                        <div class="right"><h2 class="product-title product-text">158X</h2></div>
-                        <div class="left"></div>
-                        <img src="./images/scooter/158X/158_blue.png" alt="JY-158S" class="product-img">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card">
-                        <div class="right bg-1">
-                            <h2 class="product-title product-text">158S</h2>
+    <div id="app">
+        <div class="wrapper">
+            <div class="left"><h2 class="product-title noChange">JY</h2></div>
+            <div class="swiper-container" ref="swiperContainer">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="item in scooterCarousel">
+                        <div class="card">
+                            <div class="right" :style="{backgroundColor: item.color}" ref="right"><h2 class="product-title product-text" ref="productText">{{item.type}}</h2></div>
+                            <div class="left"></div>
+                            <img :src="item.img" alt="JY-158S" class="product-img" ref="productImg">
                         </div>
-                        <div class="left"></div>
-                        <img src="./images/scooter/158S/158S_r.png" alt="JY-158S" class="product-img">
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card">
-                        <div class="right bg-2">
-                            <h2 class="product-title product-text">158A</h2>
-                        </div>
-                        <div class="left"></div>
-                        <img src="./images/scooter/158A/158A_w.png" alt="JY-158S" class="product-img">
-                    </div>
-                </div>
-        </div>
-        <div class="slogan">
-            <h6>最新車款全新上市</h6>
-            <button class="btn">了解更多</button>
-        </div>
-        <div class="wrights">
-            <p>All Rights Reserved © MCY MOTOR Inc</p>
-            <div class="marquee">
-                <div>
-                    <span>Scroll Down to See More</span>
-                    <span>Scroll Down to See More</span>
                 </div>
             </div>
-            <a href="#newArrivals"><img src="./images/component/scrolldown_arrow.svg" alt=""></a>
+            <div class="slogan">
+                <h6>最新車款全新上市</h6>
+                <button class="btn">了解更多</button>
+            </div>
+            <div class="wrights">
+                <p>All Rights Reserved © MCY MOTOR Inc</p>
+                <div class="marquee">
+                    <div>
+                        <span>Scroll Down to See More</span>
+                        <span>Scroll Down to See More</span>
+                    </div>
+                </div>
+                <a href="#newArrivals"><img src="./images/component/scrolldown_arrow.svg" alt=""></a>
+            </div>
         </div>
+        <section id="newArrivals">
+            <div class="scooter-title mt-5">
+                <div class="title">
+                    <p>NEW ARRIVALS</p>
+                    <h5 class="mt-2">最新車款</h5>
+                    <hr class="mt-2">
+                </div>
+            </div>
+            <ul class="newScooters">
+                <li v-for="scooter in newArrival">
+                    <img :src="scooter.img" alt="">
+                    <h6 class="mt-1">{{scooter.productName}}</h6>
+                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
+                </li>
+            </ul>
+        </section>
+        <section id="allScooters">
+            <div class="scooter-title mt-5">
+                <div class="title">
+                    <p>THE BEST</p>
+                    <h5 class="mt-2">精選車款</h5>
+                    <hr class="mt-2">
+                </div>
+            </div>
+            <select name="type" id="type">
+                <option value="all" selected disabled>全部車款</option>
+                <option v-for="category in categories">{{category.categoryName}}</option>
+            </select>
+            <ul class="mt-5">
+                <li v-for="(product, id) in products" :data-id="id">
+                    <img :src="product.img" alt="">
+                    <h6 class="mt-1">{{product.name}}</h6>
+                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
+                </li>
+            </ul>
+        </section>
     </div>
-    <section id="newArrivals">
-        <div class="scooter-title mt-5">
-            <div class="title">
-                <p>NEW ARRIVALS</p>
-                <h5 class="mt-2">最新車款</h5>
-                <hr class="mt-2">
-            </div>
-        </div>
-        <ul class="newScooters">
-            <li>
-                <img src="./images/scooter/158X/158-r.png" alt="">
-                <h6 class="mt-1">DREAM 158X</h6>
-                <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/158S/158S_b.png" alt="">
-                <h6 class="mt-1">Mobile 158S</h6>
-                <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-        </ul>
-    </section>
-    <section id="allScooters">
-        <div class="scooter-title mt-5">
-            <div class="title">
-                <p>THE BEST</p>
-                <h5 class="mt-2">精選車款</h5>
-                <hr class="mt-2">
-            </div>
-        </div>
-        <select name="type" id="type">
-            <option value="all" selected disabled>全部車款</option>
-            <option value="158A">JY158A</option>
-            <option value="158S">JY158S</option>
-            <option value="158L">JY158L</option>
-        </select>
-        <ul class="mt-5">
-            <li>
-                <img src="./images/scooter/166s/166s_p45l.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/158X/158X_black.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/158A/158A_w.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/166s/166s_b45l.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/158S/158S_g.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/188L/188L_bg45l.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-            <li>
-                <img src="./images/scooter/188L三輪車/188L_3bk.png" alt="">
-                    <h6 class="mt-1">Dream 158X</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
-            </li>
-        </ul>
-    </section>
-    
     @@include("./component/footer.html")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
     <!-- <script src="./js/index.js"></script> -->
-    <script src="./js/scooter_swiper.js"></script>
+    <!-- <script src="./js/scooter_swiper.js"></script> -->
+    <script src="./js/scooter.js"></script>
 </body>
 </html>

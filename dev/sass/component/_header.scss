@@ -77,6 +77,9 @@ nav{
         width: 200px;
         height: 30px;
         margin-left: 30px;
+        @include respond(mobile){
+            margin-left: 5px;
+        }
     }
 }
 
@@ -135,7 +138,7 @@ nav{
     margin: 0 16px;
     width: 90px;
     @include respond(pad){
-        margin-left: 50px;
+        margin-left: 50px;  
     }
     &:hover p{
         background-position: 0 100%;    
@@ -159,6 +162,11 @@ nav{
         background-position: 100%;
         transition: background-position 275ms ease;
         text-decoration: none; // text decorations are clipped in WebKit browsers
+    }
+    p{
+        @include respond(mobile){
+            display: none;
+        }
     }
     .burger{
         margin-left: 8px;
@@ -229,6 +237,7 @@ nav{
     }
     .burgerMenu{
         margin: 0;
+        width: 100%;
         span{
             display: none;
         }
@@ -237,10 +246,11 @@ nav{
         display: none;
     }
     .phoneSearch{
-        width: 20px;
+        width: 30px;
         height: 20px;
         background-image: url("../../images/component/magnify.png");
-        margin-right: 16px;
+        background-repeat: no-repeat;
+        background-size: contain;
         z-index: 2;
     }
     .type{

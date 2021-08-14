@@ -3,8 +3,15 @@
     position: relative;
     height: 100vh;
     width: 100%;
+    margin-top: 8vh;
+    @include respond(mobile){
+        height: 80vh;
+    }
     .swiper-slide{
         height: 100vh;
+        @include respond(mobile){
+            height: 80vh;
+        }
     }
     .left,.right{
         position: absolute;
@@ -18,12 +25,6 @@
     .right{
         background-color: #022889;
         left: 50%;
-    }
-    .bg-1{
-        background-color: maroon;
-    }
-    .bg-2{
-        background-color: steelblue;
     }
     .product-img{
         position: absolute;
@@ -73,7 +74,10 @@
         color: #000;
         text-align: center;
         left: 15%;
-        top: 15%;
+        top: 8%;
+        @include respond(mobile){
+            top: 10%;
+        }
     }
     .product-text{
         opacity: 0;
@@ -216,6 +220,9 @@ section{
 }
 
 #newArrivals{
+    @include respond(mobile){
+        padding-top: 0;
+    }
     .newScooters{
         display: flex;
         justify-content: center;
@@ -224,7 +231,7 @@ section{
             flex-direction: column;
         }
         li{
-            margin: 0 60px;
+            margin: 20px 60px;
             display: flex;
             justify-content: center;
             align-items: center;
