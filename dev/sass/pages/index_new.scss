@@ -1,19 +1,19 @@
 @import "../all.scss";
-// .loading{
-//     background-color: #fff;
-//     width: 100vw;
-//     height: 100vh;
-//     position: fixed;
-//     z-index: 100000;
-//     transition: all .3s;
-//     img{
-//         position: absolute;
-//         left: 50%;
-//         top: 50%;
-//         transform: translate(-50%,-70%);
-//         width: 500px;
-//     }
-// }
+.loading{
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100000;
+    transition: all .3s;
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-70%);
+        width: 500px;
+    }
+}
 .banner{
     position: relative;
     margin-top: 8vh;
