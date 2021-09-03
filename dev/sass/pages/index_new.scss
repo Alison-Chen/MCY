@@ -17,16 +17,37 @@
 .banner{
     position: relative;
     margin-top: 8vh;
+    .mobile_banner{
+        display: none;
+        @include respond(mobile){
+            display: block;
+        }
+    }
+    .desktop_banner{
+        @include respond(mobile){
+            display: none;
+        }
+    }
     .text{
         position: absolute;
         left: 7%;
         top: 60%;
         color: #fff;
+        @include respond(mobile){
+            top: 80%;
+        }
         h5{
             font-size: 2rem;
+            @include respond(mobile){
+                font-size: 1.5rem;
+            }
         }
         a{
             color: #fff;
+            margin-top: 64px;
+            @include respond(mobile){
+                margin-top: 24px;
+            }
         }
     }
 }
@@ -87,7 +108,7 @@
         transform: scale(0.9);
         transition: all .3s;
         .card{
-            // width: 600px;
+            color: #000;
             @include respond(pad){
                 margin: 0 30px;
             }
@@ -257,6 +278,7 @@
             vertical-align: middle;
             @include respond(mobile){
                 margin: 5px 0;
+                display: none;
             }
             div{
                 display: block;
@@ -281,8 +303,9 @@
         }
         a{
             @include respond(mobile){
-                display: inline-block;
-                margin-left: 20px;
+                position: absolute;
+                right: 0%;
+                bottom: 40%;
             }
         }
         img{

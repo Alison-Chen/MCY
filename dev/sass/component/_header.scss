@@ -63,6 +63,33 @@ nav{
     .nav-active{
         transform: translateX(0%);
     }
+    .typeCategory{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 30%;
+        @include respond(mobile){
+            display: none;
+        }
+        li{
+            color: #000;
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+            overflow: hidden;
+            background: linear-gradient(to right, $cyan, $cyan 50%, black 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100%;
+            transition: background-position 275ms ease;
+            text-decoration: none; // text decorations are clipped in WebKit browsers
+            &:hover{
+                background-position: 0 100%;  
+            }
+        }
+    }
 }
 
 .logo{
@@ -79,31 +106,6 @@ nav{
         margin-left: 30px;
         @include respond(mobile){
             margin-left: 5px;
-        }
-    }
-}
-
-.type{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
-    li{
-        color: #000;
-        position: relative;
-        display: inline-block;
-        font-weight: 500;
-        overflow: hidden;
-        background: linear-gradient(to right, $cyan, $cyan 50%, black 50%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        background-position: 100%;
-        transition: background-position 275ms ease;
-        text-decoration: none; // text decorations are clipped in WebKit browsers
-        &:hover{
-            background-position: 0 100%;  
         }
     }
 }
@@ -127,6 +129,24 @@ nav{
         padding: 5px 20px;
         max-width: 100%;
         font-size: 15px;
+        position: relative;
+    }
+    .displayArea{
+        position: absolute;
+        width: 220px;
+        display: none;
+        li{
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px 20px;
+            background-color: #fff;
+            a{
+                color: #000;
+            }
+        }
+    }
+    .areaShow{
+        display: block;
     }
 }
 .burgerMenu{

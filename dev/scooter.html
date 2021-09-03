@@ -15,18 +15,18 @@
             <div class="left"><h2 class="product-title noChange">JY</h2></div>
             <div class="swiper-container" ref="swiperContainer">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="item in scooterCarousel">
+                    <div class="swiper-slide" v-for="item in slider" :key="item['prod_no']">
                         <div class="card">
-                            <div class="right" :style="{backgroundColor: item.color}" ref="right"><h2 class="product-title product-text" ref="productText">{{item.type}}</h2></div>
+                            <div class="right" :style="{backgroundColor: item['color_code']}" ref="right"><h2 class="product-title product-text" ref="productText">{{item['prod_type'].replace("JY-","")}}</h2></div>
                             <div class="left"></div>
-                            <img :src="item.img" alt="JY-158S" class="product-img" ref="productImg">
+                            <img :src="item['product_pic']" alt="JY-158S" class="product-img" ref="productImg">
+                        </div>
+                        <div class="slogan">
+                            <h6>最新車款全新上市</h6>
+                            <a :href="item.url" class="btn" @click="getProductId(item['prod_no'])">了解更多</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="slogan">
-                <h6>最新車款全新上市</h6>
-                <button class="btn">了解更多</button>
             </div>
             <div class="wrights">
                 <p>All Rights Reserved © MCY MOTOR Inc</p>
@@ -48,10 +48,10 @@
                 </div>
             </div>
             <ul class="newScooters">
-                <li v-for="scooter in newArrival">
-                    <img :src="scooter.img" alt="">
-                    <h6 class="mt-1">{{scooter.productName}}</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
+                <li v-for="scooter in newArrivals" :key="scooter['prod_no']">
+                    <img :src="scooter.product_pic" alt="">
+                    <h6 class="mt-1">{{scooter.prod_name}}</h6>
+                    <a :href="scooter.url" class="btn mt-4" @click="getProductId(scooter['prod_no'])">了解更多</a>
                 </li>
             </ul>
         </section>
@@ -63,26 +63,26 @@
                     <hr class="mt-2">
                 </div>
             </div>
-            <select name="type" id="type">
-                <option value="all" selected disabled>全部車款</option>
-                <option v-for="category in categories">{{category.categoryName}}</option>
+            <select name="type" id="type" @change="getCategory">
+                <option value="all" selected>全部車款</option>
+                <option v-for="category in categories">{{category}}</option>
             </select>
             <ul class="mt-5">
-                <li v-for="(product, id) in products" :data-id="id">
-                    <img :src="product.img" alt="">
-                    <h6 class="mt-1">{{product.name}}</h6>
-                    <a href="scooterDetail.html" class="btn mt-4">了解更多</a>
+                <li v-for="product in scooters" :key="product['prod_no']" :data-type="product['prod_type']" ref="product">
+                    <img :src="product.product_pic" alt="">
+                    <h6 class="mt-1">{{product['prod_name']}}</h6>
+                    <a :href="product.url" class="btn mt-4" @click="getProductId(product['prod_no'])">了解更多</a>
                 </li>
             </ul>
         </section>
     </div>
     @@include("./component/footer.html")
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
-    <!-- <script src="./js/index.js"></script> -->
-    <!-- <script src="./js/scooter_swiper.js"></script> -->
     <script src="./js/scooter.js"></script>
+    <script src="./js/footer.js"></script>
 </body>
 </html>

@@ -297,11 +297,11 @@ section{
                 font-size: 20px;
             }
             img{
-                width: 300px;
-                max-width: 100%;
+                max-width: 130%;
                 z-index: 2;
-                // transform: translateY(-150px);
-                // border: 1px solid #000;
+                @include respond(mobile){
+                    max-width: 100%
+                }
             }
             a{
                 @include btn-lighten(white,#000);

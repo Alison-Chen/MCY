@@ -1,60 +1,54 @@
 new Vue({
     el: "#app",
     data: {
-        scooterCarousel: [{
-            type: "158X",
-            img: "./images/scooter/158X/158X_blue.png",
-            color: "#022889"
-        },{
-            type: "158S",
-            img: "./images/scooter/158S/158S_r.png",
-            color: "maroon"
-        },{
-            type: "158A",
-            img: "./images/scooter/158A/158A_w.png",
-            color: "steelblue"
-        },],
-        newArrival: [{
-            img: "./images/scooter/158X/158X_red.png",
-            name: "DREAM 158X"
-        },{
-            img: "./images/scooter/158X/158X_black.png",
-            name: "MOBILE 158S"
-        }],
-        products: [{
-            img: "./images/scooter/166s/166s_p45l.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/158X/158X_black.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/158A/158A_w.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/166s/166s_b45l.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/158S/158S_g.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/188L/188L_bg45l.png",
-            name: "Dream 158X"
-        },{
-            img: "./images/scooter/188L_tricycle/188L_3bk.png",
-            name: "Dream 158X"
-        },],
-        categories: [{
-            categoryName: "JY158A"
-        },{
-            categoryName: "JY158S"
-        },{
-            categoryName: "JY158X"
-        }]
+        scooters: [],
+        newArrivals: {},
+        slider: {},
+        categories: [],
+        filter: []
+    },
+    methods: {
+        getProductId(index){
+            sessionStorage.setItem("no", index);
+        },
+        getCategory(e){
+            this.scooters = this.filter;
+            this.scooters = this.filter.filter(scooter => {
+                if(e.target.value !== 'all'){
+                    return scooter.prod_type === e.target.value
+                }else{
+                    return this
+                }
+            })
+        }
     },
     mounted(){
+        //ajax
+        axios
+            .get('./php/scooter.php')
+            .then(response => {
+                response.data.map(data => data.url = `./scooterdetail.html?id=${data['prod_no']}`);
+                this.scooters = response.data; //全部機車
+                this.filter = response.data;
+                
+                let latest = [...response.data].sort((old, last) => {
+                    return new Date(last['prod_ondate']) - new Date(old['prod_ondate'])
+                }) //將上架機車從新到舊排列
+
+                this.slider = [... latest].splice(0,3);
+                this.newArrivals = [... latest].splice(0,2);
+
+                response.data.forEach(data => this.categories.push(data.prod_type));
+                this.categories = Array.from(new Set(this.categories));
+            })
+            .catch(function (error) { // 請求失敗處理
+                console.log(error);
+            });
+    },
+    updated(){
+        //slider animation
         let tl = new TimelineMax();
-
-
+        // $refs放在mounted階段會出現undefined $refs定位在v-if v-for等的dom節點，這些判斷下dom還沒被渲染
         tl.to(this.$refs.right, 3, {
             delay: 0,
             height: "100vh",
@@ -104,7 +98,7 @@ new Vue({
                 delay: 6000,
                 disableOnInteraction: false,
             },
-            // speed: 1500,
+            speed: 1500,
             on: {
                 slideChange: function () {
                     tl.restart();

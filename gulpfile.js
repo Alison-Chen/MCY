@@ -80,7 +80,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML,moveFonts));
+exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML,moveFonts,movePhp));
 
 exports.browser = function browsersync() {
     browserSync.init({
@@ -110,6 +110,7 @@ exports.w = function watchFiles() {
     watch('./dev/images/**', moveImg);
     watch('./dev/js/*.js', moveJS);
     watch('./dev/fonts/*', moveFonts);
+    watch('./dev/php/*', movePhp);
 };
 
 
