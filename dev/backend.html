@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後臺管理-美家園電動機車MCYMotor</title>
+    <link rel="stylesheet" href="./css/pages/backend.css">
+</head>
+<body>
+    <header>
+        <img src="./images//component/logo.png" alt="logo">
+    </header>
+    <main>
+        <form action="./php/backend_login.php">
+            <h5>美家園MCY Motor後台</h5>
+            <div class="account mt-8">
+                <label for="account">管理員帳號</label>
+                <input type="text" name="account" id="account" v-model="account" ref="account">
+                <p class="mt-1" ref="mintAccount">請輸入帳號</p>
+            </div>
+            <div class="password mt-5">
+                <label for="password">管理員密碼</label>
+                <input type="password" name="password" id="password" v-model="password" ref="password">
+                <p class="mt-1" ref="mintPassword">請輸入密碼</p>
+            </div>
+            <div class="mt-5 btn" @click="logIn">登入</div>
+            <a href="index.html">返回主頁</a>
+        </form>
+        <p class="mt-2">© 美家園MCY Motor All Rights Reserved. 美家園MCY Motor版權所有不得轉載</p>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <script src="./js/backend.js"></script>
+</body>
+</html>

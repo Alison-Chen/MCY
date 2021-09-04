@@ -97,3 +97,14 @@ new Vue({
         });
     }
 })
+
+//meta title && description
+const sessionId = sessionStorage.getItem("no");
+fetch(`./php/getType.php?id=${sessionId}`).then(res => res.json())
+                            .then(data => {
+                                document.title = `${data[0].prod_type}-美家園電動機車MCYMotor`;
+                                let meta = document.createElement("meta");
+                                meta.name = "description";
+                                meta.content = data[0].prod_info;
+                                document.getElementsByTagName("head")[0].appendChild(meta);
+                            });

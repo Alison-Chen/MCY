@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美家園電動車 比較 JY-158X、JY-158A、JY-158S、JY-188L、Qunnie電動三輪車、JY-166S">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link rel="stylesheet" href="./css/pages/scooter.css">
-    <title>Scooter</title>
+    <link rel="shortcut icon" href="./images//MCY MOTOR.svg" type="image/x-icon">
+    <title>車款總覽-美家園電動車MCYMotor</title>
 </head>
 <body>
     @@include("./component/header.html")
@@ -19,7 +21,7 @@
                         <div class="card">
                             <div class="right" :style="{backgroundColor: item['color_code']}" ref="right"><h2 class="product-title product-text" ref="productText">{{item['prod_type'].replace("JY-","")}}</h2></div>
                             <div class="left"></div>
-                            <img :src="item['product_pic']" alt="JY-158S" class="product-img" ref="productImg">
+                            <img :src="item['product_pic']" :alt="item['prod_type']" class="product-img" ref="productImg">
                         </div>
                         <div class="slogan">
                             <h6>最新車款全新上市</h6>
@@ -49,7 +51,7 @@
             </div>
             <ul class="newScooters">
                 <li v-for="scooter in newArrivals" :key="scooter['prod_no']">
-                    <img :src="scooter.product_pic" alt="">
+                    <img :src="scooter.product_pic" :alt="scooter['prod_type']">
                     <h6 class="mt-1">{{scooter.prod_name}}</h6>
                     <a :href="scooter.url" class="btn mt-4" @click="getProductId(scooter['prod_no'])">了解更多</a>
                 </li>
@@ -69,7 +71,7 @@
             </select>
             <ul class="mt-5">
                 <li v-for="product in scooters" :key="product['prod_no']" :data-type="product['prod_type']" ref="product">
-                    <img :src="product.product_pic" alt="">
+                    <img :src="product.product_pic" :alt="product['prod_type']">
                     <h6 class="mt-1">{{product['prod_name']}}</h6>
                     <a :href="product.url" class="btn mt-4" @click="getProductId(product['prod_no'])">了解更多</a>
                 </li>

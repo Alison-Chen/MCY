@@ -27,6 +27,9 @@ $d-grey: #101010;
 $cyan: #2EBFA5;
 $blue: #3f7cac;
 
+//按鈕預設樣式消失
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
+
 
 //scroll bar
 ::-webkit-scrollbar{
