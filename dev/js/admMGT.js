@@ -1,7 +1,7 @@
 new Vue({
     el: "#container",
     data:{
-        userName: "albert",
+        userName: "",
         admin: [],
         cancelNo: "",
         adname: "",

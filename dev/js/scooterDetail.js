@@ -68,11 +68,12 @@ new Vue({
         }))
     },
     updated(){
-        let swiper = new Swiper('.swiper-container', {
-            grabCursor: true,
+        new Swiper('.swiper-container', {
+            // grabCursor: true,
             slidesPerView: 'auto',
             centeredSlides: true,
-            // loop: true,
+            nextButton: ".swiper-button-next",
+            prevButton: ".swiper-button-prev",
             breakpoints: {
                 1920: {
                     slidesPerView: 1,

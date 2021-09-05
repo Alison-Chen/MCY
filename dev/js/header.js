@@ -41,14 +41,17 @@ navSlide();
 //搜尋吧
 const searchBar = document.querySelector("#search");
 const displayArea = document.querySelector(".displayArea");
+const phoneSearch = document.querySelector(".phoneSearch");
+const appendSearch = document.querySelector(".appendSearch");
+const phoneBar = document.querySelector("#phoneBar");
 
 fetch("./php/headerSearch.php")
     .then(res => res.json())
     .then(data => {
-        searchBar.addEventListener("keyup", (e) => {
+        const searchFilter = (e) => {
             let userData = e.target.value;
             let emptyArray = [];
-            if(userData){
+            if (userData) {
                 emptyArray = data.filter(info => {
                     return info['prod_name'].toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
                 });
@@ -60,10 +63,14 @@ fetch("./php/headerSearch.php")
                 // console.log(emptyArray);
                 displayArea.classList.add("areaShow")
                 showSuggestion(emptyArray)
-            }else{
+            } else {
                 displayArea.classList.remove("areaShow")
             }
-        })
+        }
+
+        searchBar.addEventListener("keyup", searchFilter)
+        phoneBar.addEventListener("keyup", searchFilter)
+
 
         setId = function(element){
             sessionStorage.setItem("no", element)
@@ -71,19 +78,14 @@ fetch("./php/headerSearch.php")
         function showSuggestion(list){
             let listData;
             if(!list.length){
-                userValue = searchBar.value;
+                searchBar.style.display == "block" ? userValue = searchBar.value : userValue = phoneBar.value;
                 listData = `<li>未找到相關資訊</li>`
             }else{
-                // listData == list;
+
                 listData = list.join("");
                 console.log(listData);
             }
-            // list.map(li => {
-            //     console.log(li);
-            //     let element = document.createElement("li")
-            //     element.innerText = li;
-            //     displayArea.appendChild(element)
-            // })
+
             displayArea.innerHTML = listData
         }
     }).catch(function (err) {
@@ -92,7 +94,7 @@ fetch("./php/headerSearch.php")
     });
 
 showFilter = (e) => {
-    if(e.target !== searchBar){
+    if(e.target !== searchBar || e.target !== appendSearch){
         displayArea.classList.remove("areaShow")
     }else{
         displayArea.classList.toggle("areaShow")    
@@ -100,3 +102,4 @@ showFilter = (e) => {
 }
 
 document.addEventListener("click", showFilter)
+phoneSearch.addEventListener("click", () => appendSearch.classList.toggle("show"));

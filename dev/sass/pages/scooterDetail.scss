@@ -30,10 +30,27 @@
                 width: 50%;
             }
             @include respond(mobile){
-                width: 80%;
+                width: 100%;
+                margin: 0;
+            }
+            .swiper-button-next,.swiper-button-prev{
+                background-image: none;
+                i{
+                    color: rgba(201, 199, 199, 0.788);
+                    font-size: 2rem;
+                }
+            }
+            .swiper-button-next{
+                right: 0;
+            }
+            .swiper-button-prev{
+                left: 0;
             }
             img{
                 width: 80%;
+                @include respond(mobile){
+                    width: 100%;
+                }
             }
             .howmuch{
                 display: flex;
@@ -67,13 +84,19 @@
             width: 100%;
         }
         .scooterDetail{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
             .choose{
                 display:flex;
                 justify-content:flex-start;
                 align-items: flex-start;
+                width: 100%;
                 margin:20px 0;
-                @include respond(mobile){
-                    margin: 0;
+                @include respond(pad){
+                    margin-bottom: 20px;
+                    order: -1;
                 }
                 p{
                     margin-bottom: 10px;
@@ -150,11 +173,6 @@
                     @include respond(mobile){
                         margin-left: 0;
                     }
-                    p{
-                        @include respond(mobile){
-                            font-size: 13px;
-                        }
-                    }
                     // border: 1px solid #000;
                 }
                 .info{
@@ -182,8 +200,8 @@
                             margin-right: 0;
                         }
                         @include respond(mobile){
-                            width: 100%;
-                            height: 200px;
+                            width: 48%;
+                            height: 150px;
                         }
                         pre{
                             position: absolute;

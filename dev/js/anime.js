@@ -1,6 +1,6 @@
 const svg = document.querySelector("svg");
-const aboutUs = document.querySelector(".aboutUs");
-const bound = aboutUs.getBoundingClientRect();
+const aboutUs = document.querySelector("#aboutUs");
+// const bound = aboutUs.getBoundingClientRect();
 
 
 window.addEventListener("scroll", function(){

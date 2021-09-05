@@ -131,7 +131,7 @@
     }
 }
 
-.aboutUs{
+#aboutUs{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,7 +181,10 @@
     }
     .introduce{
         margin-left: 80px;
+        width: 30%;
+        padding: 50px 0;
         @include respond(pad){
+            width: 80%;
             margin: 0 30px;
         }
         h2{
@@ -195,15 +198,11 @@
         }
         p{
             line-height: 30px;
-            @include respond(pad){
-                font-size: 14px;
-                // text-align: center;
-            }
         }
     }
 }
 
-#contactUs{
+.contactUs{
     padding: 250px 0;
     display: flex;
     justify-content: center;

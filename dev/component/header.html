@@ -7,13 +7,13 @@
 <script src="./js/header.js" defer></script>
 <nav id="fixed">
     <div class="logo">
-        <h1><a href="index_new.html" class="brand">MCY MOTOR</a></h1>
+        <h1><a href="index.html" class="brand">MCY MOTOR</a></h1>
     </div>
     <ul class="nav-links">
         <li><a href="scooter.html">車款介紹</a></li>
         <li><a href="blog.html">最新消息</a></li>
-        <li><a href="">關於我們</a></li>
-        <li><a href="">經銷商專區</a></li>
+        <li><a href="index.html#aboutUs">關於我們</a></li>
+        <!-- <li><a href="">經銷商專區</a></li> -->
     </ul>
     <ul class="typeCategory">
         <li><a href="./scooterDetail.html" data-id="1">Dream</a></li>
@@ -24,10 +24,8 @@
     <div class="menu">
         <div class="search">
             <input type="text" name="search" id="search" placeholder="搜尋車款" autocomplete="off">
-            <ul class="displayArea">
-            </ul>
+            <div class="phoneSearch"></div>
         </div>
-        <div class="phoneSearch"></div>
         <div class="burgerMenu">
             <p>MENU</p>
             <div class="burger">
@@ -35,6 +33,12 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
+        </div>
+    </div>
+    <div class="appendSearch">
+        <div class="phoneModal">
+            <input type="text" name="phoneBar" id="phoneBar" placeholder="搜尋車款" class="mt-5">
+            <ul class="displayArea"></ul>
         </div>
     </div>
 </nav>
